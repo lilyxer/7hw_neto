@@ -29,7 +29,7 @@ def get_shop_list_by_dishes(lst: list, quan: int) -> dict|str:
     return 'гостей не будет, ужин отменяется'
 
 
-file_puth = 'text.txt' # input('введите относительный либо абсолютных путь к файлу: ')
+file_puth = 'files\\text.txt' # input('введите относительный либо абсолютных путь к файлу: ')
 
 with open(file_puth, 'r', encoding='utf-8') as file:
     file_read = file.read()
@@ -43,13 +43,13 @@ pprint.pprint(cook_book)
      
 print('Выберите что мы будем готовить и на сколько персон\nУмеем готовить:')
 print(*cook_book, sep=', ')
-list_cook = []
-answer = input('Добавьте блюдо... ')
-while answer in cook_book:
-    list_cook.append(answer)
-    answer = input('Что нибудь ещё? ')
-else:
-    print('Рецепта на это блюдо у нас нет')
+list_cook = ['Запеченный картофель', 'Омлет'] # [] для интерактивности можно свой список собрать
+# answer = input('Добавьте блюдо... ')
+# while answer in cook_book:
+#     list_cook.append(answer)
+#     answer = input('Что нибудь ещё? ')
+# else:
+#     print('Рецепта на это блюдо у нас нет')
 
 print('\nДля ужина нам понадобится...\n')
 pprint.pprint(get_shop_list_by_dishes(list_cook, int(input('Сколько персон? '))))
